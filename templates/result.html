@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Generated</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        img {
+            margin: 20px 0;
+            width: 200px;
+            height: 200px;
+            border: 4px solid #f8f9fa;
+            border-radius: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            background: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        a:hover {
+            background: #45a049;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code for {{ name }}</h1>
+        <p>Grade: {{ grade }}</p>
+        <img src="{{ url_for('static', filename='qrcodes/' + filename) }}" alt="QR Code">
+        <br>
+        <a href="{{ url_for('static', filename='qrcodes/' + filename) }}" download>📥 Download QR</a>
+        <br><br>
+        <a href="/">➕ Register Another Jacket</a>
+    </div>
+</body>
+</html>
